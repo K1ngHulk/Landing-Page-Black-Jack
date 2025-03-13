@@ -11,7 +11,7 @@ export default function LandingPage() {
       <header className="bg-primary text-primary-foreground py-4 sticky top-0 z-50">
         <div className="container flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <Image src="/images/logo/logo.svg" alt="Logo" width={40} height={40} className="rounded-md" />
+            <Image src="/images/logo/logo.png" alt="Logo" width={40} height={40} className="rounded-md" />
             <h1 className="text-xl font-bold">Tragamonedas Black Jack</h1>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -21,7 +21,7 @@ export default function LandingPage() {
             <a href="#servicios" className="hover:underline">
               Servicios
             </a>
-            <a href="/galeria" target="_blank" className="hover:underline" rel="noreferrer">
+            <a href="/galeria" className="hover:underline">
               Galería
             </a>
           </nav>
@@ -51,9 +51,9 @@ export default function LandingPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <div className="w-6 h-6 bg-primary rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Juegos de Mesa</h3>
+                <h3 className="text-xl font-bold mb-2">Premios y Obsequios</h3>
                 <p className="text-muted-foreground mb-4">
-                  Disfruta de nuestros juegos de mesa con los mejores crupiers y ambiente exclusivo.
+                  Diviertete jugando y ganando premios increíbles.
                 </p>
               </div>
 
@@ -61,7 +61,7 @@ export default function LandingPage() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <div className="w-6 h-6 bg-primary rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Bar y Restaurante</h3>
+                <h3 className="text-xl font-bold mb-2">Tragos y Bocaditos</h3>
                 <p className="text-muted-foreground mb-4">
                   Complementa tu experiencia con nuestra selección de bebidas y platos exclusivos.
                 </p>
@@ -77,15 +77,12 @@ export default function LandingPage() {
               <a href="/reclamaciones" target="_blank" rel="noopener noreferrer" className="block">
                 <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105">
                   <Image
-                    src="/images/misc/libro-reclamaciones.jpg"
+                    src="/images/misc/libro-reclamaciones.jpeg"
                     alt="Libro de Reclamaciones"
                     width={500}
                     height={300}
                     className="w-full"
                   />
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                    <p className="text-white text-xl font-bold">Haz clic para abrir el Libro de Reclamaciones</p>
-                  </div>
                 </div>
               </a>
               <p className="mt-4 text-muted-foreground">
@@ -167,7 +164,7 @@ export default function LandingPage() {
 }
 
 function ImageCarousel() {
-  const images = ["/images/carousel/slide1.jpg", "/images/carousel/slide2.jpg", "/images/carousel/slide3.jpg"]
+  const images = ["/images/carousel/slide1.png", "/images/carousel/slide2.png", "/images/carousel/slide3.jpg"]
 
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -205,7 +202,6 @@ function ImageCarousel() {
             <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white p-4">
               <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">Bienvenido a Black Jack</h2>
               <p className="text-lg md:text-xl text-center max-w-2xl mb-6">¡Donde están los premios más grandes!</p>
-              <Button size="lg">Conocer más</Button>
             </div>
           </div>
         ))}

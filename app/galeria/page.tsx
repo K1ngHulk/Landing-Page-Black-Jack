@@ -50,9 +50,9 @@ export default function GaleriaPage() {
           Volver a la página principal
         </Link>
 
-        <h1 className="text-3xl font-bold text-center mb-2">Nuestra Galería</h1>
+        <h1 className="text-3xl font-bold text-center mb-2">Nuestra Galería de Ganadores</h1>
         <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Conoce nuestras instalaciones y disfruta de la mejor experiencia en juegos de azar.
+          ¡Se parte de nuestra amplia galería de ganadores!
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
