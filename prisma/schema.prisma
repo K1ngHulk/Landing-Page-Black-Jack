@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Reclamacion {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  fullName        String
+  documentType    String
+  documentNumber  String
+  email           String
+  phone           String
+  address         String
+  complaintType   String
+  productService  String
+  description     String
+  status          String   @default("pendiente")
+  response        String?
+  responseDate    DateTime?
+}

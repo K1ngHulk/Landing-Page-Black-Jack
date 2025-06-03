@@ -39,11 +39,26 @@ export default function ReclamacionesPage() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    // Aquí iría la lógica para enviar el formulario
-    alert("Formulario enviado correctamente. Nos pondremos en contacto pronto.")
-    form.reset()
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('/api/reclamaciones', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el formulario')
+      }
+
+      alert('Su reclamo ha sido registrado correctamente. Nos pondremos en contacto pronto.')
+      form.reset()
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Hubo un error al procesar su reclamo. Por favor, intente nuevamente.')
+    }
   }
 
   return (
@@ -215,7 +230,11 @@ export default function ReclamacionesPage() {
               </div>
 
               <div className="flex justify-end">
-                <Button type="submit">Enviar Reclamación</Button>
+                {isSubmitting ? (
+                  <LoadingButton />
+                ) : (
+                  <Button type="submit">Enviar Reclamación</Button>
+                )}
               </div>
             </form>
           </Form>
